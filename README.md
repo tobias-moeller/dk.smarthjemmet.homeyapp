@@ -1,2 +1,3 @@
-# dk.smarthjemmet.homeyapp
-Smarthjemmets devices support for homey
+# Smarthjemmet
+
+Adds support for smarthjemmet devices
