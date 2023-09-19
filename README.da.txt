@@ -1,0 +1,1 @@
+Smarthjemmet er en software og hardware firma der specialisere sig i smart home gadgets.
