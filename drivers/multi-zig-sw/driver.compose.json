@@ -4,32 +4,56 @@
   },
   "class": "remote",
   "capabilities": [
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
   "platforms": [
     "local"
   ],
   "connectivity": [
     "zigbee"
   ],
+  "zigbee": {
+    "manufacturerName": "smarthjemmet.dk",
+    "productId": [
+      "MULTI-ZIG-SW"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1],
+        "bindings": []
+      },
+      "2": {
+        "clusters": [7],
+        "bindings": [18]
+      },
+      "3": {
+        "clusters": [7],
+        "bindings": [18]
+      },
+      "4": {
+        "clusters": [7],
+        "bindings": [18]
+      },
+      "5": {
+        "clusters": [7],
+        "bindings": [18]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Remove and insert the battery 4 times with 1 secound delay to set the device in pairing mode. Pairing mode is active when led blinks",
+        "da": "Fjern og indsæt batteriet 4 gange med 1 sekunds mellemrum. Paring er aktiv når led'en blinker"
+      }
+    }
+  },
   "images": {
     "small": "{{driverAssetsPath}}/images/small.png",
     "large": "{{driverAssetsPath}}/images/large.png"
-  },
-  "pair": [
-		{
-			"id": "list_devices",
-			"template": "list_devices",
-			"options": {
-				"singular": true
-			},
-			"navigation": {
-				"next": "add_devices"
-			}
-		},
-		{
-			"id": "add_devices",
-			"template": "add_devices"
-		}
-	]
+  }
 }

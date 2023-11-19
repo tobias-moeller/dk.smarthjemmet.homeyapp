@@ -1,0 +1,199 @@
+
+{"ids": {
+    "modelId": "MULTI-ZIG-SW",
+    "manufacturerName": "smarthjemmet.dk"
+  },
+  "endpoints": {
+    "ieeeAddress": "00:12:4b:00:27:2b:7e:cf",
+    "networkAddress": 50548,
+    "modelId": "MULTI-ZIG-SW",
+    "manufacturerName": "smarthjemmet.dk",
+    "endpointDescriptors": [
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 50548,
+        "_reserved": 16,
+        "endpointId": 1,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 65534,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 0,
+        "inputClusters": [
+          0,
+          1
+        ],
+        "outputClusters": [
+          0,
+          1
+        ]
+      },
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 50548,
+        "_reserved": 12,
+        "endpointId": 2,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 65534,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 0,
+        "inputClusters": [
+          7
+        ],
+        "outputClusters": [
+          18
+        ]
+      },
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 50548,
+        "_reserved": 12,
+        "endpointId": 3,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 65534,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 0,
+        "inputClusters": [
+          7
+        ],
+        "outputClusters": [
+          18
+        ]
+      },
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 50548,
+        "_reserved": 12,
+        "endpointId": 4,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 65534,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 0,
+        "inputClusters": [
+          7
+        ],
+        "outputClusters": [
+          18
+        ]
+      },
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 50548,
+        "_reserved": 12,
+        "endpointId": 5,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 65534,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 0,
+        "inputClusters": [
+          7
+        ],
+        "outputClusters": [
+          18
+        ]
+      }
+    ],
+    "deviceType": "enddevice",
+    "receiveWhenIdle": false,
+    "swBuildId": "2023-08-17",
+    "capabilities": {
+      "alternatePANCoordinator": false,
+      "deviceType": false,
+      "powerSourceMains": false,
+      "receiveWhenIdle": false,
+      "security": false,
+      "allocateAddress": true
+    },
+    "extendedEndpointDescriptors": {
+      "1": {
+        "clusters": {
+          "basic": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "powerConfiguration": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {
+          "basic": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "powerConfiguration": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        }
+      },
+      "2": {
+        "clusters": {
+          "onOffSwitch": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {
+          "multistateInput": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        }
+      },
+      "3": {
+        "clusters": {
+          "onOffSwitch": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {
+          "multistateInput": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        }
+      },
+      "4": {
+        "clusters": {
+          "onOffSwitch": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {
+          "multistateInput": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        }
+      },
+      "5": {
+        "clusters": {
+          "onOffSwitch": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {
+          "multistateInput": {
+            "attributes": "UNSUP_GENERAL_COMMAND",
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        }
+      }
+    }
+  }
+}

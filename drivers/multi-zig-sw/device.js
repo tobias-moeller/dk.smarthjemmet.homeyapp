@@ -1,49 +1,81 @@
 'use strict';
 
-const { Device } = require('homey');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { debug, CLUSTER } = require('zigbee-clusters');
 
-class MyDevice extends Device {
+// Enable debug logging of all relevant Zigbee communication
+debug(true);
+
+class MyDevice extends ZigBeeDevice {
 
   /**
    * onInit is called when the device is initialized.
    */
-  async onInit() {
-    this.log('MyDevice has been initialized');
-  }
+  async onNodeInit({ zclNode }) {
+    this.printNode();
+    // Register measure_battery capability and configure attribute reporting
+    this.batteryThreshold = 20;
+    this.registerCapability('alarm_battery', CLUSTER.POWER_CONFIGURATION, {
+      getOpts: {
+        getOnStart: true,
+      },
+      reportOpts: {
+        configureAttributeReporting: {
+          minInterval: 0, // No minimum reporting interval
+          maxInterval: 60000, // Maximally every ~16 hours
+          minChange: 5, // Report when value changed by 5
+        },
+      },
+    });
 
-  /**
-   * onAdded is called when the user adds the device, called just after pairing.
-   */
-  async onAdded() {
-    this.log('MyDevice has been added');
-  }
+    // measure_battery
+    this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+      getOpts: {
+      getOnStart: true,
+      },
+      reportOpts: {
+        configureAttributeReporting: {
+          minInterval: 0,
+          maxInterval: 60000,
+          minChange: 1,
+        },
+      },
+    });
 
-  /**
-   * onSettings is called when the user updates the device's settings.
-   * @param {object} event the onSettings event data
-   * @param {object} event.oldSettings The old settings object
-   * @param {object} event.newSettings The new settings object
-   * @param {string[]} event.changedKeys An array of keys changed since the previous version
-   * @returns {Promise<string|void>} return a custom message that will be displayed
-   */
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('MyDevice settings where changed');
-  }
+    // Click handler Virker men sender kun on off   
+    // 1 click (on)(off)
+    // 2 click (on)(off)(on)(off)
+    // hold    (on)
+    // release (off)
 
-  /**
-   * onRenamed is called when the user updates the device's name.
-   * This method can be used this to synchronise the name to the device.
-   * @param {string} name The new name
-   */
-  async onRenamed(name) {
-    this.log('MyDevice was renamed');
-  }
+    // https://github.com/JohanBendz/com.tuya.zigbee/blob/SDK3/drivers/smart_remote_1_button_2/device.js
 
-  /**
-   * onDeleted is called when the user deleted the device.
-   */
-  async onDeleted() {
-    this.log('MyDevice has been deleted');
+    //let debounce = 0;
+//
+    //const node = await this.homey.zigbee.getNode(this);
+    //node.handleFrame = (endpointId, clusterId, frame, meta) => {
+    //  //if (clusterId === 6) {
+    //    this.log(
+    //      "endpointId:",
+    //      endpointId,
+    //      ", clusterId:",
+    //      clusterId,
+    //      ", frame:",
+    //      frame,
+    //      ", meta:",
+    //      meta
+    //    );
+    //    this.log("Frame JSON data:", frame.toJSON());
+    //    debounce = debounce + 1;
+    //    //if (debounce === 1) {
+    //    //  this.buttonCommandParser(frame);
+    //    //} else {
+    //    //  debounce = 0;
+    //    //}
+    //  //}
+    //};
+
+
   }
 
 }
